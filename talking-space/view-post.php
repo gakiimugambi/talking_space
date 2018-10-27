@@ -1,4 +1,5 @@
 <?php
+//include('sessions.php');
 include('conn.php');
 include('header.php');
 ?>
@@ -21,7 +22,7 @@ padding-bottom: 3px;
 
         <?php
 
-            $sqlxc = "SELECT * FROM posts WHERE id=".$_GET['id'];
+            $sqlxc = "SELECT * FROM posts WHERE post_id=".$_GET['id'];
             $resultxc = $conn->query($sqlxc);
             if ($resultxc->num_rows > 0) {
                 // output data of each row
@@ -71,7 +72,7 @@ padding-bottom: 3px;
                                         
         <?php
 
-            $sqlxc = "SELECT * FROM likes WHERE postid=".$_GET['id'];
+            $sqlxc = "SELECT * FROM likes WHERE post_id=".$_GET['id'];
             $resultxc = $conn->query($sqlxc);
             if ($resultxc->num_rows > 0) {
                 // output data of each row
